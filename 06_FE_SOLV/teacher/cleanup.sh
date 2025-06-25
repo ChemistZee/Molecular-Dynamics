@@ -1,4 +1,4 @@
 #!/bin/bash
 
-
-rm -v step*.pdb \#*[0-9]#
+mkdir -p _trash
+mv -v step*.pdb \#*[0-9]# _trash

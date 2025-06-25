@@ -62,13 +62,10 @@ gen_gmxtop()
 
 run_gmx_sims()
 {
-	### students will not need 'gmx_mpi' but 'gmx'
-	### not really necessary since the students have gromacs installed on  their pc's
-	ml gromacs/5.1.4
 	# solvate the system and generate the ions
-	gmx_mpi solvate -cp $R_L.gro -cs spc216.gro -o ${R_L}_solv.gro -p topol.top -box 13 13 13
-	gmx_mpi grompp -f em.mdp -c ${R_L}_solv.gro -p topol.top -o ions.tpr
-	printf "SOL\n" | gmx_mpi genion -s ions.tpr -o ${R_L}_ready.gro -p topol.top -pname NA -nname CL -conc 0.1 -neutral
+	gmx solvate -cp $R_L.gro -cs spc216.gro -o ${R_L}_solv.gro -p topol.top -box 13 13 13
+	gmx grompp -f em.mdp -c ${R_L}_solv.gro -p topol.top -o ions.tpr -maxwarn 3
+	printf "SOL\n" | gmx genion -s ions.tpr -o ${R_L}_ready.gro -p topol.top -pname NA -nname CL -conc 0.1 -neutral
 
 	# loop over repetitions 1 to 3
 	for rep in 1 2 3
@@ -78,23 +75,26 @@ run_gmx_sims()
 		# loop over the different equilibrations and production simulations
 		for i in em nvt npt pre prod
 		do
-			# standard gromacs mdrun execution routine
-			gmx_mpi grompp -f $i.mdp -c $j.gro -p topol.top -o ${i}_$rep.tpr
-			gmx_mpi mdrun -ntomp 16 -deffnm ${i}_$rep -v
+			gmx grompp \
+                -f $i.mdp \
+                -c $j.gro \
+                -p topol.top \
+                -o ${i}_$rep.tpr \
+                -maxwarn 2
+			gmx mdrun -deffnm ${i}_$rep -v
 			# re-set j to the current file prefix for the input file of the next iteration
 			j=${i}_$rep
 		done
 		# center the ligand in the trajectory system 
-		printf "13\n0\n" | gmx_mpi trjconv -s prod_$rep.tpr -f prod_$rep.xtc -o prod_center_$rep.xtc -pbc mol -center
-
+		printf "13\n0\n" | gmx trjconv -s prod_$rep.tpr -f prod_$rep.xtc -o prod_center_$rep.xtc -pbc mol -center
 		echo "convert Trajectory from GROMACS XTC to AMBER NetCDF4"
 		sed "s/REP/$rep/g" convert_gmx2amb.py > convert${rep}_gmx2amb.py
 		python convert${rep}_gmx2amb.py
 	done
 }
 
-# functions can be executed independently; switch their execution on/off by inserting/deleting '#'
-cp_inp_files
-gen_params
+echo "Make sure to uncomment functions before executing."
+#cp_inp_files
+#gen_params
 #gen_gmxtop
 #run_gmx_sims

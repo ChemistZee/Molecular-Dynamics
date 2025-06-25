@@ -1,6 +1,5 @@
 #!/bin/bash
 
-ml gromacs/5.1.4
 
 l=$1
 
@@ -18,7 +17,7 @@ do
 
 	# start the run of the corresponding lambda and simulation step
 	# for '--gres:gpu:0' in 'submit_script.sh', set '-ntomp 6' after 'mdrun'
-	gmx_mpi grompp \
+	gmx grompp \
 		-f ${sim_phase}_$l.mdp \
 		-c $gro_file \
 		-p topol.top \
@@ -26,7 +25,7 @@ do
 		-po $OUTDIR/mdout$sim_phase.mdp \
 		&>$OUTDIR/grompp.$sim_phase \
 		|| { echo "something went wrong, check $OUTDIR/grompp.$sim_phase"; exit; }
-	gmx_mpi mdrun \
+	gmx mdrun \
 		-deffnm $OUTDIR/$sim_phase &>$OUTDIR/mdrun.$sim_phase \
 		|| { echo "something went wrong, check $OUTDIR/mdrun.$sim_phase"; exit; }
 
