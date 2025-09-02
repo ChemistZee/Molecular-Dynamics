@@ -1,0 +1,126 @@
+# Summary of Revisions Made to Manuscript
+
+## Section 1: Introduction
+
+**1.1 Content Additions**
+- Added sentence clarifying limitations of molecular dynamics approximations: "Furthermore, these interaction potentials can only be approximated mathematically, since electronic motion, mode-coupling and other effects are not explicitly treated in classical molecular dynamics simulations."
+- Inserted paragraph describing MD software variety: "A variety of molecular dynamics simulation software packages are available, with prominent examples including GROMACS, NAMD, AMBER, and OpenMM, each offering distinct advantages and limitations. Among them, GROMACS is known for its high performance, user-friendly interface, and extensive suite of analysis tools."
+
+**1.2 Citation Updates**
+- Relocated citations for MD software packages (AMBER, NAMD, etc.) to specific software mentions for improved clarity
+
+**1.3 Text Corrections**
+- Corrected "effect" to "affect" in the sentence about MD simulation limitations
+- Added explanatory sentences about protonation state limitations: "These limitations affect the physical realism of MD simulations, especially in accurately capturing protonation state fluctuations that occur in biological environments. For example, histidine can adopt three protonation states, each affecting its hydrogen-bonding properties, but standard MD protocols generally fix it in one chosen form throughout the simulation."
+
+## Section 2: Prerequisites
+
+**2.1 Software Recommendations Update**
+- Revised discussion of analysis tools to acknowledge that xmgrace is outdated: "Due to its simple installation and command-line usage, the tool grace (also known as xmgrace) is primarily used in this tutorial. However, modern programming languages such as Python or R are recommended if the user has prior experience, as xmgrace is considered outdated by current standards."
+
+**2.2 Version Updates**
+- Updated GROMACS version reference from 2018 to 2026
+
+## Section 3: Exercise 0: Short Introduction to Linux
+
+**3.1 Command Examples**
+- Added chmod example: "E.g., chmod 777 program.sh makes program.sh executable for the user."
+- Added find command description: "find <path> -name <pattern> - Recursively searches for files and directories starting from <path> that match the given <pattern>. <pattern> can include wildcards like '*.txt'. Combined with options like -type or -exec, find becomes a powerful tool for locating and manipulating files."
+
+## Section 4: Exercise 1: Energy Conservation and Integration Algorithms
+
+**4.1 Conceptual Clarifications**
+- Added Figure 4 with explanatory text in Section 4.1 to introduce trajectories as series of snapshots
+- Corrected figure reference (Figure 5)
+- Merged subfigures of Figure 5 into single figure with updated caption
+
+**4.2 Text Improvements**
+- Revised unclear sentence about particle motion: "Assuming N particles, the particle movement depends on the forces F on each particle and the potential energy function [...]"
+- Clarified potential energy function terminology by changing to "total potential energy function"
+
+**4.3 Technical Corrections**
+- Changed "error" to "global error" for precision
+- Changed "truncation error" to "global error"
+- Corrected mathematical notation from "Delta t^4" to "Delta t^2"
+- Fixed typo: "Humand-readable" to "Human-readable"
+- Added missing period in Table description for .tpr files
+- Updated gmx mdrun help page link to current URL
+
+## Section 5: Exercise 2: Forcefield Terms and Polymer Statistics
+
+**5.1 Figure Optimization**
+- Reduced Figure 9 (Abstract Potential Energy Surface) file size
+
+**5.2 Content Revision**
+- Removed premature NVT ensemble introduction, revised sentence to: "In this exercise, a polymer consisting of 20 atoms should be simulated at 300 K according to the downloadable polymer.mdp for the following cases:"
+
+## Section 6: Exercise 3: Temperature Coupling and Heat Capacity
+
+**6.1 Text Clarifications**
+- Enhanced instruction clarity: "Compare the MDP file from the current polymer simulation with the previous exercise's MDP file and speculate which alterations might have caused the behavior at hand."
+
+**6.2 Reference Updates**
+- Updated GROMACS reference manual link to current version
+- Updated command-line reference link to current version
+
+**6.3 Figure Optimization**
+- Reduced Figure 15 (water models comparison) file size
+
+## Section 7: Exercise 4: Pressure and Temperature Coupling in MD Simulations
+
+**7.1 Figure Optimization**
+- Reduced Figure 16 (experimental setups) file size
+
+## Section 8: Exercise 5: Long-Range Interactions
+
+**8.1 Figure Optimization**
+- Reduced file sizes for Figures 19, 20a, and 21
+
+**8.2 Reference Updates**
+- Updated command-line reference link to current version
+
+## Section 9: Exercise 6: Solvation Free Energy Calculation
+
+**9.1 Reference Updates**
+- Updated MDP options help page link to current version
+
+## Section 10: Exercise 7: Umbrella Sampling
+
+**10.1 Technical Corrections**
+- Fixed typo in figure reference (Figure 26) and equation reference (Equation 44)
+
+**10.2 Content Enhancement**
+- Added methodological clarification: "Note that estimating the binding free energy by simply subtracting the free energy surface values of the bound and unbound states yields only an approximation. A rigorous calculation requires integration over the respective regions of the free energy surface, along with additional correction terms..."
+
+**10.3 Formatting Issues**
+- Resolved code formatting issue with separation line in Figure 28 by adding [H] placement specifier
+
+## Section 11: Exercise 8: Protein Simulation
+
+**11.1 Reference and Figure Updates**
+- Updated MDP options help page link
+- Reduced Figure 36 file size
+
+## Section 12: Exercise 9: Virtual Drug Screening
+
+**12.1 Figure Improvements**
+- Converted Figure 44 to single-column format for better visibility
+- Updated Figure 44 caption for August 2025
+- Enhanced Figure 48 caption to clarify that right panel shows zoomed view of left panel
+
+**12.2 Reference Corrections**
+- Updated broken Medium link for SMILES tutorial to working URL
+
+**12.3 Text Corrections**
+- Fixed typographical error: "not to use mv rather than rm" (removed erroneous "not")
+
+**12.4 Figure Consistency**
+- Standardized color schemes in Figures 54-57 using green/purple combination with different line/marker styles to distinguish experimental runs
+
+## Author Contributions
+
+**Updated author contributions section**
+
+---
+
+*All revisions have been implemented to improve clarity, accuracy, and consistency throughout the manuscript while addressing reviewer and editor feedback.*
