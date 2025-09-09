@@ -38,7 +38,8 @@ This tutorial addresses these challenges by teaching the **foundations of MD sim
 ### Versions
 
 - [on github](https://github.com/Foly93/MD_FromBasicsToApplication/blob/main/releases/LiveCoMS_tutorial_v1.pdf)
-- [on LiveCoMS](doi.org/10.33011/livecoms.6.1.3797)
+- [on LiveCoMS](https://doi.org/10.33011/livecoms.6.1.3797)
+     	 
 
 ## Get Involved
 
