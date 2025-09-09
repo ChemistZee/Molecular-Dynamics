@@ -13,6 +13,7 @@ A major part of the vision is to make the tutorial didactically meaningful throu
  - Every exercise subdirectoriy contains the exercise material (```student/```) and the solution material (```teacher/```).
  - ```student/``` folders only contain the starter files required to complete the exercise tasks self-reliantly.
  - ```teacher/``` folders contain all solutions, intermediate files, and executables that automatically generate the solutions from the starter files.
+
 Finally, the vision is to encourage university lecturers to adopt this tutorial in full or in part for their classes. By fostering positive feedback loops among lecturers, students, and independent users, this project can grow as a living publication that continually improves over time.
 
 ## Should You Be Interested in the Tutorial?
