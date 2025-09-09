@@ -66,10 +66,13 @@ Your name, too, can go here if you help us substantially revise/extend the paper
 author = {Vollmers, Luis and Chen, Shu-Yu, and Reif, Maria and Mauck, Tristan Alexander and Zacharias, Martin},
 title = {Molecular Dynamics: From Basics to Application [Article v1.0]},
 journal = {Living Journal of Computational Molecular Science},
+publisher = {University of Colorado at Boulder},
 volume = {6},
 number = {1},
 pages = {3797},
 year = {2025},
-doi = {11.33011/livecoms.6.1.3059},
+doi = {10.33011/livecoms.6.1.3797},
+url = {http://dx.doi.org/10.33011/livecoms.6.1.3797},
+issn = {2575-6524},
 }
 ```
